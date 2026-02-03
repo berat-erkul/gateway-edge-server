@@ -17,7 +17,15 @@ public class SecurityConfig {
         return httpSecurity
                 .authorizeExchange()
                 .pathMatchers("/actuator/**").permitAll() // Allow actuator endpoints (optional)
-                .pathMatchers(HttpMethod.GET, "/webjars/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll() // Allow Swagger UI resources
+
+                .pathMatchers(HttpMethod.GET, "/webjars/**").permitAll()
+                .pathMatchers(HttpMethod.GET, "/swagger-ui.html/**").permitAll()
+                .pathMatchers(HttpMethod.GET,"/swagger-resourves").permitAll()
+                .pathMatchers(HttpMethod.GET,"/v3/api-docs/**").permitAll()
+
+                .pathMatchers(HttpMethod.GET,"/user-service/v3/api-docs/**").permitAll()
+                .pathMatchers(HttpMethod.GET,"/project-service/v3/api-docs/**").permitAll()
+                .pathMatchers(HttpMethod.GET,"/task-service/v3/api-docs/**").permitAll()
                 .anyExchange().authenticated().and()
                 .oauth2ResourceServer().jwt().and().and().build();
     }
