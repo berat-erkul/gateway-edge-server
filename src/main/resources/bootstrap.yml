@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: default
   cloud:
     config:
       name: gateway-service
@@ -7,3 +9,6 @@ spring:
       retry:
         max-attempts: 10
         max-interval: 2000
+
+keycloak:
+  address: ${KEYCLOAK_ADDRESS}
