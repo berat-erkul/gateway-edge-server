@@ -71,6 +71,12 @@
             <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
 
+        <!--Vault-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-vault-config</artifactId>
+        </dependency>
+
         <!--Sleuth and Zipkin-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

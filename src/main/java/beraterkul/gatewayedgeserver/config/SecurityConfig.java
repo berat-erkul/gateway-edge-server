@@ -26,6 +26,7 @@ public class SecurityConfig {
                 .pathMatchers(HttpMethod.GET,"/user-service/v3/api-docs/**").permitAll()
                 .pathMatchers(HttpMethod.GET,"/project-service/v3/api-docs/**").permitAll()
                 .pathMatchers(HttpMethod.GET,"/task-service/v3/api-docs/**").permitAll()
+                .pathMatchers(HttpMethod.GET,"/ai-assistant-service/v3/api-docs/**").permitAll()
                 .anyExchange().authenticated().and()
                 .oauth2ResourceServer().jwt().and().and().build();
     }

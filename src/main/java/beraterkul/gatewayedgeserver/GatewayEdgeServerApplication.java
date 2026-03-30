@@ -13,3 +13,12 @@ public class GatewayEdgeServerApplication {
     }
 
 }
+
+
+
+/*
+
+    export JAVA_HOME=/Users/beraterkul/Library/Java/JavaVirtualMachines/corretto-11.0.30/Contents/Home
+    irun
+
+ */

@@ -33,6 +33,13 @@ public class GatewayConfig {
                                 .rewritePath("/task-service/(?<path>.*)", "/${path}"))
                         .uri("lb://task-service")
                 )
+                .route("ai-assistant-service", r -> r
+                        .path("/ai-assistant-service/**")
+                        .filters(f -> f
+                                .filter(authHeaderFilter)
+                                .rewritePath("/ai-assistant-service/(?<path>.*)", "/${path}"))
+                        .uri("lb://ai-assistant-service")
+                )
                 .build();
     }
 }
